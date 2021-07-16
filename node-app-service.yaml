@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app-service
+spec:
+  selector:
+    app: node-app 
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000  # opening a private port to expose
+    targetPort: 6969 # node app is listening on this port
+    nodePort: 30069 # actual port the client hits.
+
+    # clients <-> loadBalancer:30069 <-> kubernetes:5000 <=> nodeapp:6969
+    

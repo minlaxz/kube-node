@@ -2,7 +2,7 @@ const express = require("express");
 const os = require("os");
 const app = express();
 
-const port = 8080;
+const port = 6969;
 
 app.listen(port, () => {
     console.log(`listening for request on port: ${port}`);
